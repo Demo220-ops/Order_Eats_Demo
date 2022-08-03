@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.RecipePages.RecipeDesserts" BackgroundImageSource="mobile_background.jpg">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Add Desserts" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,0,60,0" FontSize="24" TextColor="White"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="8,25,8,20" HeightRequest="670" Opacity="0.78">
+                <StackLayout>
+                    <ScrollView>
+                        <StackLayout HeightRequest="690">
+                            <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+
+                            <Label Text="Name of the Dish" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                            <Entry Placeholder="Recipe name here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="dessertName" />
+
+                            <Label Text="Enter Description" TextColor="White" Margin="20,10,20,10" FontSize="16"/>
+                            <Entry Placeholder="Dish Description" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="dessertDescription" />
+
+                            <Label Text="Enter Category" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                            <Entry Placeholder="Dish Category" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="dessertCategory" />
+
+                            <Label Text="Enter Price" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                            <Entry Placeholder="Dish Price" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="dessertPrice" />
+
+                            <Button Text="Add Recipe" FontAttributes="Bold" TextColor="White" BackgroundColor="MediumPurple" Margin="20,4,20,0" Clicked="Add_dessert" />
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

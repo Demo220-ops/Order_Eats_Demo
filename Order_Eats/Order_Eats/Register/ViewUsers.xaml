@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.Register.ViewUsers" BackgroundImageSource="mobile_background.jpg">
+
+    <NavigationPage.TitleView>
+        <Label Text="View Users" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="10,0,10,0" FontSize="24" TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add User" IconImageSource="add.png" Priority="2" Order="Primary" x:Name="addUsers" Clicked="addUsers_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="8,25,8,20" HeightRequest="700" Opacity="0.74">
+                <StackLayout>
+                    <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+                    <CollectionView x:Name="ShowUsers">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem Text="Edit" 
+                                                       BackgroundColor="Green" 
+                                                       CommandParameter="{Binding .}" 
+                                                       Invoked="Edit_swipe" 
+                                                       IconImageSource="add.png"/>
+
+                                            <SwipeItem Text="Delete" 
+                                                       BackgroundColor="Red" 
+                                                       CommandParameter="{Binding .}" 
+                                                       Invoked="Delete_swipe" 
+                                                       IconImageSource="delete.png" />
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+
+                                    <StackLayout  Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="10,6,10,6" BackgroundColor="#df26be" Padding="5">
+                                        <Label Text="{Binding Id}" FontSize="24" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding FirstName}" FontSize="24" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding SurName}" FontSize="22" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding Email}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding Roles}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                                        <!--<Label Text="{Binding Password}" FontSize="18" FontAttributes="Bold" TextColor="Black"/>-->
+                                        <Label Text="{Binding CellPhone}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+                                    </StackLayout>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                        
+                    
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

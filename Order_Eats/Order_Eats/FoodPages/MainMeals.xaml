@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.FoodPages.MainMeals"  BackgroundImageSource="mobile_background.jpg">
+
+    <NavigationPage.TitleView>
+        <Label Text="Main Meals" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="10,0,55,0" FontSize="24" TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add_recipe.png" Priority="2" Order="Primary" x:Name="addMains" Clicked="addMains_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="8,25,8,20" HeightRequest="700" Opacity="0.74">
+                <StackLayout BackgroundColor="SlateBlue">
+                    <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+                    <CollectionView x:Name="showMainMeals">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+
+                                            <SwipeItem Text="Edit" 
+                                                       BackgroundColor="Green" 
+                                                       CommandParameter="{Binding .}" 
+                                                       Invoked="Edit_Invoked" 
+                                                       IconImageSource="add.png"/>
+
+                                            <SwipeItem Text="Delete" 
+                                                       BackgroundColor="Red" 
+                                                       CommandParameter="{Binding .}" 
+                                                       Invoked="Delete_Invoked" 
+                                                       IconImageSource="delete.png" />
+
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="10,6,10,6" BackgroundColor="MediumSlateBlue" Padding="5">
+                                        <Label Text="{Binding DishName}" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding Description}" FontSize="22" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding category}" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding DishPrice}" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                                    </StackLayout>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

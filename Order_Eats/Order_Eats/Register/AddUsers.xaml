@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.Register.AddUsers" BackgroundImageSource="mobile_background.jpg">
+
+    <NavigationPage.TitleView>
+        <Label Text="Add User" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,0,60,0" FontSize="24" TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="8,25,8,20" HeightRequest="430" Opacity="0.74">
+            <StackLayout>
+                <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+                <ScrollView>
+                    <StackLayout>
+                        <Label Text="Name" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder=" First name Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="userName" />
+
+                        <Label Text="Surname" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Surname Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="userSurname" />
+
+                        <StackLayout Margin="20,0,20,10">
+                            <RadioButton Content="User" TextColor="White" x:Name="userRole"/>
+                            <RadioButton Content="Admin" TextColor="White" x:Name="adminRole"/>
+                        </StackLayout>
+
+                        <Label Text="Email" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Email Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="email" />
+
+                        <Label Text="Password" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Password Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="userPwd" IsPassword="True"/>
+
+                        <Label Text="Cellphone Number" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Phone number Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="4" TextColor="White" x:Name="userPhone" />
+
+                        <Button Text="Register" FontAttributes="Bold" TextColor="White" BackgroundColor="MediumPurple" Margin="20,4,20,0" Clicked="Add_User" />
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

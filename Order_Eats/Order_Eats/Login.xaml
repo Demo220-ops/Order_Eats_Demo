@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.Login" BackgroundImageSource="mobile_background.jpg" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BackgroundColor="SlateBlue" Margin="8,4,8,0" HeightRequest="50" CornerRadius="10">
+                    <Label Text="Food App" TextColor="White" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="32" FontAttributes="Bold"/>
+                </Frame>
+                
+                    <Image Source="foodIcon.png" WidthRequest="120" HeightRequest="120" Margin="0,20,0,0"/>
+
+                <!--<StackLayout>
+                    <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="true" IsRunning="True"/>
+                </StackLayout>-->
+
+                <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="8,25,8,0" HeightRequest="428" Opacity="0.74">
+                    <StackLayout>
+                        
+                        <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+                        
+                        <Label Text="Username" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Email Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="1.2" TextColor="White" x:Name="email" />
+
+                        <Label Text="Password" TextColor="White" Margin="20,10,20,10" FontSize="20"/>
+                        <Entry Placeholder="Password Here" PlaceholderColor="LightGray" Margin="20,0,20,10" BackgroundColor="MediumSlateBlue" Opacity="4" TextColor="White" x:Name="pass" IsPassword="True"/>
+
+                        <Button Text="Log in" FontAttributes="Bold" TextColor="White" Opacity="2" BackgroundColor="MediumPurple" Margin="20,20,20,0" Clicked="Login_App" />
+                        
+                        <Label Text="Or" TextColor="White" HorizontalTextAlignment="Center" FontSize="Large" Margin="0,0,0,0" />
+
+                        <Button Text="Register" FontAttributes="Bold" TextColor="White" BackgroundColor="MediumPurple" Margin="20,4,20,0" Clicked="Register_Here" />
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Order_Eats.MainPage"  BackgroundImageSource="mobile_background.jpg">
+
+    <NavigationPage.TitleView>
+        <Label Text="Menu" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="0,0,68,0" FontSize="24" TextColor="White"/>
+    </NavigationPage.TitleView>
+
+    <StackLayout>
+        <Frame CornerRadius="10" BackgroundColor="SlateBlue" Padding="10" Margin="10,25,8,20" HeightRequest="710" Opacity="0.84">
+            <StackLayout>
+                <ActivityIndicator Color="Aqua" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="progress" IsVisible="false" IsRunning="True"/>
+                <ScrollView>
+                    <StackLayout Margin="12,12,12,12" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                        <!--Starters-->
+                        <Label Text="Starters" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+                        <ImageButton Source="starters.jpg" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="40,0,40,10" x:Name="starTers" Clicked="StarTers_Clicked"/>
+
+                        <!--Mains-->
+                        <Label Text="Mains" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+                        <ImageButton Source="mains.jpg" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="40,0,40,10" x:Name="mainsMeals" Clicked="mainsMeals_Clicked"/>
+
+                        <!--Dessert-->
+                        <Label Text="Dessert" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+                        <ImageButton Source="dessert.jpg" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="40,0,40,10" x:Name="dessertDish" Clicked="dessertDish_Clicked"/>
+
+                        <!--Cooldrinks-->
+                        <Label Text="Cooldrinks" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" TextColor="White" />
+                        <ImageButton Source="cooldrinks.jpg" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="40,0,40,10" x:Name="coolDrinks" Clicked="coolDrinks_Clicked"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
